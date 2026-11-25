@@ -390,3 +390,39 @@
 .xm-homeband .xm-hb-gift:nth-child(even) { transform: rotate(2deg); }
 .xm-homeband .xm-hb-gift .xm-cover { box-shadow: 0 10px 18px -8px rgba(0,0,0,.6); }
 @media (max-width: 860px) { .xm-homeband .xm-hb-shelf { max-width: 26rem; } }
+
+/* v7: young readers portal on the adult page */
+.xmas .xm-portal { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.5rem; align-items: center; margin: 3.5rem auto 0; max-width: 60rem; padding: clamp(1.6rem, 4vw, 2.8rem); border-radius: 20px; overflow: hidden; text-decoration: none; color: #e8fffa;
+  background: radial-gradient(60% 70% at 25% 70%, rgba(255,106,213,.22), transparent 70%), radial-gradient(55% 60% at 80% 15%, rgba(94,240,212,.2), transparent 70%), linear-gradient(150deg, #2a1868, #160d3e 60%, #0f0a2c);
+  box-shadow: 0 0 0 1.5px rgba(94,240,212,.5), 0 0 0 6px rgba(143,123,255,.12), 0 30px 60px -28px rgba(22,13,62,.8); transition: box-shadow .4s ease, transform .4s ease; }
+.xmas .xm-portal:hover, .xmas .xm-portal:focus-visible { box-shadow: 0 0 0 1.5px #5ef0d4, 0 0 0 8px rgba(143,123,255,.22), 0 0 60px -6px rgba(143,123,255,.75), 0 30px 60px -28px rgba(22,13,62,.8); transform: translateY(-2px); }
+.xmas .xm-portal:focus-visible { outline: 3px solid #5ef0d4; outline-offset: 4px; }
+.xmas .xp-glow { position: absolute; inset: -40%; background: conic-gradient(from 0deg, transparent, rgba(94,240,212,.12), transparent 30%, rgba(255,106,213,.12), transparent 60%); animation: xp-spin 14s linear infinite; pointer-events: none; }
+@keyframes xp-spin { to { transform: rotate(360deg); } }
+.xmas .xp-snow { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.xmas .xp-snow i { position: absolute; inset: -100% 0 0; background-image: linear-gradient(#e8fffa,#e8fffa), linear-gradient(#ffb8ec,#ffb8ec), linear-gradient(#5ef0d4,#5ef0d4), linear-gradient(#e8fffa,#e8fffa), linear-gradient(#e8fffa,#e8fffa); background-size: 4px 4px; background-repeat: no-repeat; background-position: 8% 12%, 34% 40%, 62% 20%, 88% 66%, 50% 84%; opacity: .7; animation: ys-fall 10s steps(30) infinite; }
+.xmas .xp-snow i:nth-child(2) { background-position: 22% 72%, 6% 34%, 76% 46%, 94% 10%, 44% 4%; opacity: .45; animation-duration: 14s; }
+.xmas .xp-art { position: relative; display: flex; align-items: flex-end; justify-content: center; gap: 0; min-height: 15rem; }
+.xmas .xp-gift { width: min(10rem, 48%); transform: rotate(-4deg); }
+.xmas .xp-gift { margin-top: 7.6rem; }
+.xmas .xp-gift .xm-tag { left: 8%; right: auto; top: -7.4rem; transform: rotate(-3deg); width: 8.4rem; }
+.xmas .xp-gift .xm-tag::after { right: auto; left: 50%; top: 100%; width: 0; height: .7rem; border-top: 0; border-left: 1px solid #5ef0d4; transform: none; }
+.xmas .xm-portal .xp-elf { position: relative; right: auto; bottom: auto; width: 34%; margin-left: -.6rem; }
+.xmas .xp-text { position: relative; display: grid; gap: .8rem; justify-items: start; }
+.xmas .xp-kicker { font-family: var(--mono); font-size: .76rem; color: #5ef0d4; }
+.xmas .xp-h { font-size: clamp(1.7rem, 3.2vw, 2.3rem); line-height: 1.1; color: #fff; }
+.xmas .xp-line { font-size: 1.08rem; line-height: 1.5; color: #e6e1ff; max-width: 40ch; }
+.xmas .xp-steps { display: grid; gap: .35rem; font-family: var(--mono); font-size: .8rem; color: #e8fffa; }
+.xmas .xp-steps b { display: inline-grid; place-items: center; width: 1.35rem; height: 1.35rem; margin-right: .5rem; border-radius: 4px; background: rgba(94,240,212,.16); box-shadow: inset 0 0 0 1px #5ef0d4; color: #5ef0d4; font-weight: 500; }
+.xmas .xm .btn.solid.xp-btn { background: #5ef0d4; border-color: #5ef0d4; color: #0f0a2c; margin-top: .4rem; }
+.xmas .xm .xm-portal:hover .btn.solid.xp-btn { background: #8ff5e2; }
+@media (max-width: 760px) { .xmas .xm-portal { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; } .xmas .xp-art { min-height: 12rem; } .xmas .xm .xp-btn { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .xmas .xp-glow, .xmas .xp-snow i { animation: none !important; } .xmas .xm-portal, .xmas .xm-portal:hover { transform: none; } }
+/* home band shelf: each cover is its own link; the teen one opens the young readers page */
+.xm-homeband .xm-hb-link { display: block; border-radius: 4px; }
+.xm-homeband .xm-hb-link:focus-visible { outline: 3px solid #e8c873; outline-offset: 4px; }
+.xm-homeband .is-teen-link { filter: drop-shadow(0 0 10px rgba(143,123,255,.7)); }
+.xm-homeband .xm-hb-link:nth-child(odd) .xm-hb-gift { transform: rotate(-2deg); }
+.xm-homeband .xm-hb-link:nth-child(even) .xm-hb-gift { transform: rotate(2deg); }
+.xm-homeband .xm-hb-cap { grid-column: 1 / -1; margin: .4rem 0 0; text-align: center; font-family: var(--mono); font-size: .8rem; color: #e8c873; }
+.xm-homeband .xm-hb-cap a { color: #f3e2b0 !important; }
