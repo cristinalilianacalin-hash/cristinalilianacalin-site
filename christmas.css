@@ -84,6 +84,10 @@
 .xmas .xm-cover-ph.ink-dark .ph-series { color: #26332c; }
 .xmas .xm-cover-ph.ink-dark .ph-author { color: #3d2f08; border-top-color: rgba(23,32,28,.35); }
 .xmas .is-teen .xm-cover-ph .ph-author { margin-right: 14%; }
+.xmas .xm-cover-ph.has-stripe { background: linear-gradient(90deg, rgba(0,0,0,.5), transparent 9%), repeating-linear-gradient(180deg, transparent 0 11px, var(--s) 11px 12px, transparent 12px 23px, var(--s) 23px 25px, transparent 25px 41px), var(--c); }
+.xmas .xm-cover-ph.has-stripe .ph-title { color: #fff; text-shadow: 0 0 6px #111114, 0 0 2px #111114; }
+.xmas .xm-cover-ph.has-stripe .ph-series { color: #e6e1ff; text-shadow: 0 0 4px #111114; }
+.xmas .xm-cover-ph.has-stripe .ph-author { color: #f3e2b0; text-shadow: 0 0 4px #111114; }
 .xmas .xm-cover-ph { display: flex; flex-direction: column; padding: 12% 10%; background: linear-gradient(90deg, rgba(0,0,0,.3), transparent 9%), var(--c); color: var(--ivory); }
 .xmas .ph-series { font-family: var(--mono); font-size: .62rem; color: #d9d2bf; }
 .xmas .ph-title { margin-top: auto; font-size: 1.35rem; line-height: 1.08; }
@@ -92,6 +96,7 @@
 /* Gift wrap: SVG in the cover's 600 x 900 space; ribbon and bow stay clear of every cover's text */
 .xmas .xm-wrap { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .xmas .xm-wrap .sash { filter: drop-shadow(-1px 1px 2px rgba(0,0,0,.35)); }
+.xmas .xm-wrap .sash-shine { fill: none; stroke: #fff6d6; stroke-width: 3; opacity: .45; }
 .xmas .xm-wrap .sash-edge { fill: none; stroke: #6d5212; stroke-width: 2; opacity: .8; }
 .xmas .xm-wrap .bow { filter: drop-shadow(0 4px 4px rgba(0,0,0,.4)); }
 .xmas .xm-wrap .loop, .xmas .xm-wrap .tail, .xmas .xm-wrap .knot { fill: url(#xm-satin); stroke: #6d5212; stroke-width: 1.6; stroke-linejoin: round; }
@@ -103,23 +108,44 @@
 .xmas .xm-wrap-teen .pbow rect { fill: #5ef0d4; stroke: #0b1030; stroke-width: .8; }
 .xmas .xm-wrap-teen .pbow rect.k { fill: #ff6ad5; }
 .xmas .is-teen .xm-wrap-teen .pbow { animation: xm-pix 5s steps(1) infinite; }
-@keyframes xm-pix { 0%, 90%, 100% { transform: translate(488px, 700px); } 92% { transform: translate(492px, 698px); } 94% { transform: translate(485px, 702px); } }
+@keyframes xm-pix { 0%, 90%, 100% { transform: translate(474px, 790px); } 92% { transform: translate(478px, 788px); } 94% { transform: translate(471px, 792px); } }
+
+.xmas .xm-wrap .t-tier { fill: #f4ead3; stroke: #1d2621; stroke-width: 1.6; stroke-linejoin: round; }
+.xmas .xm-wrap .t-trunk { fill: #b79b72; stroke: #1d2621; stroke-width: 1.4; }
+.xmas .xm-wrap .t-garland { fill: none; stroke: #8c1c2b; stroke-width: 1.1; stroke-dasharray: 1 3; stroke-linecap: round; }
+.xmas .xm-wrap .t-b { fill: #8c1c2b; stroke: #1d2621; stroke-width: .8; }
+.xmas .xm-wrap .t-g { fill: #e3bd5e; stroke: #1d2621; stroke-width: .8; }
+.xmas .xm-wrap .t-star { fill: #e3bd5e; stroke: #6d5212; stroke-width: .8; }
+.xmas .xm-wrap .tp rect { fill: rgba(94,240,212,.16); stroke: #5ef0d4; stroke-width: 1.2; }
+.xmas .xm-wrap .tp .tk { fill: rgba(255,106,213,.25); stroke: #ff6ad5; }
+.xmas .xm-wrap .ts { fill: #ffe066; }
+.xmas .xm-wrap .tl { fill: #ff6ad5; } .xmas .xm-wrap .tl.m { fill: #ffe066; }
+.xmas .xm-wrap-teen use { filter: url(#xm-glow); }
 
 /* The tag hangs outside the cover, so it can never cover the cover */
-.xmas .xm-tag { position: absolute; left: calc(100% + .7rem); top: 14%; width: 7.2rem; padding: .5rem .55rem .55rem 1.05rem; background: #fffdf7; border: 1px solid #c9a24f; border-radius: 3px 8px 8px 3px; box-shadow: 0 6px 12px -8px rgba(29,38,33,.6); transform: rotate(4deg); font-family: var(--serif); line-height: 1.2; color: var(--ink); }
+.xmas .xm-tag { position: absolute; left: calc(100% + .9rem); top: 6%; width: 7.2rem; padding: .5rem .55rem .55rem 1.05rem; background: #fffdf7; border: 1px solid #c9a24f; border-radius: 3px 8px 8px 3px; box-shadow: 0 6px 12px -8px rgba(29,38,33,.6); transform: rotate(4deg); font-family: var(--serif); line-height: 1.2; color: var(--ink); }
 .xmas .xm-tag::before { content: ""; position: absolute; left: .4rem; top: 50%; width: .38rem; height: .38rem; margin-top: -.19rem; border-radius: 50%; border: 1px solid #c9a24f; background: var(--ivory); }
 .xmas .xm-tag::after { content: ""; position: absolute; right: 100%; top: 50%; width: .9rem; border-top: 1px solid #a3843a; transform: rotate(-24deg); transform-origin: right; }
-.xmas .xm-tag .tg-1 { display: block; font-size: .8rem; font-style: italic; color: var(--burg); }
+.xmas .xm-tag .tg-0 { display: block; font-family: var(--mono); font-size: .56rem; letter-spacing: .02em; color: #6b5214; margin-bottom: .25rem; }
+.xmas .xm-tag .tg-1 { display: block; font-size: .82rem; font-style: italic; color: var(--burg); }
 .xmas .xm-tag .tg-2 { display: block; font-size: .7rem; margin-top: .2rem; color: #3f4a44; }
 .xmas .xm-tag-teen { background: #0b1030; border-color: #5ef0d4; color: #e8fffa; font-family: var(--mono); border-radius: 2px; transform: rotate(-3deg); box-shadow: 0 0 0 1px rgba(255,106,213,.4), 0 0 14px -2px rgba(94,240,212,.6); }
 .xmas .xm-tag-teen::before { border-color: #5ef0d4; background: #0b1030; }
 .xmas .xm-tag-teen::after { border-top-color: #5ef0d4; }
-.xmas .xm-tag-teen { width: 7.4rem; }
-.xmas .xm-tag-teen .tg-1 { white-space: nowrap; font-style: normal; font-size: .62rem; color: #5ef0d4; letter-spacing: .02em; }
-.xmas .xm-tag-teen .tg-2 { display: inline; color: #ffb8ec; font-size: .68rem; }
+.xmas .xm-tag-teen { width: 8.6rem; }
+.xmas .xm-tag-teen .tg-1 { white-space: normal; font-style: normal; font-size: .62rem; color: #5ef0d4; letter-spacing: .02em; }
+.xmas .xm-tag-teen .tg-0 { font-family: var(--mono); font-size: .56rem; color: #5ef0d4; }
+.xmas .xm-tag-teen .tg-1 { color: #e8fffa !important; font-family: var(--mono); font-style: normal; font-size: .62rem; }
+.xmas .xm-tag-teen .tg-2 { display: inline; color: #ffb8ec; font-size: .62rem; font-family: var(--mono); }
 .xmas .tg-cursor { display: inline-block; width: .45rem; height: .75rem; margin-left: .2rem; vertical-align: -.1rem; background: #5ef0d4; animation: xm-blink 1s steps(1) infinite; }
 @keyframes xm-blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .xmas .xm-wrap-teen .pbow, .xmas .tg-cursor { animation: none !important; } }
+
+/* Working covers scale their type with the cover, so text keeps to the same zones at any size */
+.xmas .xm-cover-ph { container-type: inline-size; }
+.xmas .xm-cover-ph .ph-series { font-size: 5.6cqw; line-height: 1.35; }
+.xmas .xm-cover-ph .ph-title { font-size: 13cqw; line-height: 1.08; }
+.xmas .xm-cover-ph .ph-author { font-size: 5.8cqw; }
 
 /* ---------- Books ---------- */
 .xmas .xm-books { background: var(--ivory); }
@@ -289,7 +315,7 @@
 .xmas .xm-why-list p { margin: 0; color: #3f4a44; }
 .xmas .xm-feature { background: var(--ivory-2); }
 .xmas .xm-feature-grid { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 3rem; align-items: start; }
-.xmas .xm-gift-lg { width: min(15rem, 52%); justify-self: start; margin-left: 4%; }
+.xmas .xm-gift-lg { width: min(15rem, 48%); justify-self: start; margin-left: 4%; }
 .xmas .xm-feature h2 a { color: var(--ink) !important; text-decoration: none; }
 .xmas .xm-feature h2 a:hover { text-decoration: underline; }
 .xmas .xm-feature p { max-width: 58ch; }
