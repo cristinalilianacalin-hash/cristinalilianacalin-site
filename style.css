@@ -947,3 +947,13 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
   .nx-short { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .nav-xmas { gap: 0; padding: .25rem .5rem; }
 }
+
+/* Romanian and bilingual editions (Lulu) */
+#romana .ed-intro { max-width: 46rem; color: var(--muted); margin: .8rem 0 2rem; }
+.editions { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.edition { display: grid; grid-template-columns: 9rem 1fr; gap: 1.4rem; align-items: start; }
+.edition img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+.edition h3 { margin: 0 0 .5rem; }
+.edition .facts { margin: 1rem 0 1.2rem; }
+@media (max-width: 860px) { .editions { grid-template-columns: 1fr; } .edition { grid-template-columns: 7rem 1fr; } }
+#romana .facts span { color: var(--muted); }

@@ -819,3 +819,12 @@ body.xmas-young .site-foot { color: #e8fffa; border-top-color: rgba(94,240,212,.
 body.xmas-young .site-foot a { color: #5ef0d4; }
 body.xmas-young .site-foot .mono, body.xmas-young .site-foot small { color: #c9c3f2; }
 body.xmas-young :focus-visible { outline-color: #5ef0d4; }
+
+/* Romanian and bilingual editions block (young readers page) */
+.yb-ro { margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid rgba(94,240,212,.35); }
+.yb-ro .btns { margin: 1rem 0 .4rem; }
+.xmas .xm .yb-ro .btn { background: transparent; color: #5ef0d4; border: 1px solid #5ef0d4; }
+.xmas .xm .yb-ro .btn.solid { background: #5ef0d4; color: #0b1030; border-color: #5ef0d4; }
+.xmas .xm .yb-ro .btn:hover, .xmas .xm .yb-ro .btn:focus-visible { background: #e8fffa; color: #0b1030; border-color: #e8fffa; }
+.xmas .xm .yb-ro .btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; max-width: 34rem; }
+@media (max-width: 600px) { .xmas .xm .yb-ro .btns { grid-template-columns: minmax(0, 1fr); } }
