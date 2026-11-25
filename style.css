@@ -917,3 +917,9 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .series-note .note-body p:first-child::first-letter { font-size: 2.6em; float: left; line-height: .9; margin: .08em .1em 0 0; color: var(--accent-deep, var(--green-2)); }
 .series-note .note-sign { font-style: italic; font-size: 1.5rem !important; text-align: right; margin-top: 1.4rem !important; }
 .series-note .note-link { font-family: var(--mono); font-size: .85rem; margin: 1.6rem 0 0; }
+
+/* ===== Three doors at 40% of their earlier size (Cris, 25.11.2026). Same block on all three sites. ===== */
+.door-frame{zoom:.4}
+.door-here{display:none}
+.door a{gap:12px}
+.doors-row{margin-top:clamp(24px,3.5vw,40px)}
