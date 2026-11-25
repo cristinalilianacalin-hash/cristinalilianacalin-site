@@ -908,3 +908,12 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .tree .silk { stroke: #33433a; stroke-opacity: .5; stroke-width: 1; vector-effect: non-scaling-stroke; }
 @keyframes sp-bob { 50% { transform: translateY(10px); } }
 @media (prefers-reduced-motion: reduce) { .tree .spider { animation: none; } }
+
+/* Book page: the author's note about the series (series.reader_note, shown where page.show_series_note) */
+.series-note { background: var(--paper); padding: 3.6rem 0 3.2rem; border-top: 1px solid rgba(0,0,0,.06); }
+.series-note .wrap { max-width: 44rem; }
+.series-note h2 { margin: .4rem 0 1.4rem; font-weight: 400; line-height: 1.15; }
+.series-note .note-body p { margin: 0 0 1.05rem; font-size: 1.12rem; line-height: 1.7; }
+.series-note .note-body p:first-child::first-letter { font-size: 2.6em; float: left; line-height: .9; margin: .08em .1em 0 0; color: var(--accent-deep, var(--green-2)); }
+.series-note .note-sign { font-style: italic; font-size: 1.5rem !important; text-align: right; margin-top: 1.4rem !important; }
+.series-note .note-link { font-family: var(--mono); font-size: .85rem; margin: 1.6rem 0 0; }
