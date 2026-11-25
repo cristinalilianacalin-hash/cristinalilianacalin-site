@@ -500,3 +500,16 @@
 .xmas .xm-books .xm-card-title { display: flex; justify-content: center; }
 .xmas .xm-quiz-single .xm-book-opts { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 @media (max-width: 760px) { .xmas .xm-quiz-single .xm-book-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* v9: adult hero and home band: text column fills its width, illustration sits close beside it */
+@media (min-width: 861px) {
+  .xmas .xm:not(.xm-y) .xm-hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 3rem); }
+  .xmas .xm:not(.xm-y) .xm-hero .xm-window { justify-self: start; width: min(29rem, 100%); }
+  .xm-homeband .xm-hb-shelf { justify-self: start; width: 100%; }
+}
+.xmas .xm:not(.xm-y) .xm-hero .xm-lede { max-width: 46ch; }
+.xmas .xm:not(.xm-y) .xm-hero .xm-letter-line { max-width: 48ch; }
+.xmas .xm:not(.xm-y) .xm-hero .xm-santa { max-width: 48ch; }
+.xmas .xm:not(.xm-y) .xm-hero .btns { max-width: 38rem; }
+.xmas .xm:not(.xm-y) .xm-hero .xm-small { max-width: 48ch; }
+.xm-homeband .xm-hero-home .xm-santa, .xm-homeband .xm-hero-home .xm-letter-line, .xm-homeband .xm-hero-home .xm-small { max-width: 50ch; }
+@media (min-width: 861px) { .xm-homeband .xm-hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 3rem); } }
