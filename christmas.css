@@ -10,9 +10,13 @@
 }
 .xmas .site-head { background: var(--ivory); border-bottom-color: #d8ccb0; }
 .xmas .xm a:not(.btn) { color: var(--burg); }
-.xmas .xm .btn { border-color: var(--burg); color: var(--burg); min-height: 2.75rem; display: inline-flex; align-items: center; }
+/* One button family for both Christmas pages: same height, shape and type; solid = primary, outline = secondary */
+.xmas .xm .btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; min-height: 3.25rem; padding: .7rem 1.3rem; border: 1.5px solid var(--burg); border-radius: 4px; color: var(--burg); background: transparent; font-family: var(--mono); font-size: .86rem; line-height: 1.3; letter-spacing: .01em; white-space: normal; text-decoration: none; }
+.xmas .xm-hero .btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; max-width: 36rem; align-items: stretch; }
+.xmas .xm-hero .btns .btn { width: 100%; min-height: 3.75rem; }
+@media (max-width: 600px) { .xmas .xm-hero .btns { grid-template-columns: minmax(0, 1fr); max-width: none; } }
 .xmas .xm .btn:hover { background: #f1dfdc; }
-.xmas .xm .btn.solid { background: var(--burg); color: #fbf5ea; }
+.xmas .xm .btn.solid { background: var(--burg); border-color: var(--burg); color: #fbf5ea; }
 .xmas .xm .btn.solid:hover { background: var(--burg-2); }
 .xmas .xm .sub { color: var(--gold-ink); }
 .xmas .xm h2 { max-width: 24ch; text-wrap: balance; }
@@ -322,8 +326,6 @@
 .xmas .xm-y .xm-letter { background: var(--ivory); }
 .xmas .xm-quiz-wrap .xm-quiz { margin-top: 1rem; border: 1px solid #d8ccb0; }
 
-.xmas .xm .btn.xm-cta-long { white-space: normal; text-align: center; line-height: 1.35; max-width: 22rem; padding-top: .7rem; padding-bottom: .7rem; }
-.xmas .xm-hero .btns { align-items: stretch; }
 
 .xmas .xm-letter-line { max-width: 40ch; margin: -.8rem 0 1.4rem; padding-left: .9rem; border-left: 2px solid var(--gold); color: #f3ead2; font-style: italic; }
 .xmas .xm-book-opt .xm-gift { position: relative; }
@@ -342,6 +344,8 @@
 @media (max-width: 480px) {
   .xmas .xm-hero { padding: 2.4rem 0 3rem; }
   .xmas .xm-lede, .xmas .xm-santa-big { font-size: 1.12rem; }
-  .xmas .xm-hero .btns .btn { flex: 1 1 100%; justify-content: center; }
   .xmas .xm-envelope { margin-bottom: 1.5rem; }
 }
+/* v5: adult books show their Christmas cover, no ribbon or tag, so they can be a little larger */
+.xmas .xm-card .xm-gift.is-xmas { width: min(12rem, 68%); }
+.xmas .xm-cards-small .xm-gift.is-xmas { width: min(10rem, 58%); }

@@ -142,10 +142,10 @@
       DATA.books.forEach(function (b) {
         var btn = el('button', 'xm-opt xm-book-opt'); btn.type = 'button';
         btn.setAttribute('aria-pressed', answers.book === b.slug ? 'true' : 'false');
-        var g = el('span', 'xm-gift'); g.appendChild(coverNode(b)); g.appendChild(wrapNode(b.teen, !b.cover)); btn.appendChild(g);
+        var g = el('span', 'xm-gift'); g.appendChild(coverNode(b)); if (b.teen) g.appendChild(wrapNode(true, !b.cover)); btn.appendChild(g);
         if (b.teen) btn.className += ' is-teen';
         btn.appendChild(el('span', null, b.title));
-        btn.appendChild(el('span', 'tg-q', b.teen ? 'FROM: SANTA (verified) + a letter from the author' : 'From Santa, with love, and a letter from the author'));
+        if (b.teen) btn.appendChild(el('span', 'tg-q', 'FROM: SANTA (verified) + a letter from the author'));
         btn.appendChild(el('small', null, b.twice ? 'Letter now, book in January' : b.avail));
         btn.addEventListener('click', function () { choose('book', b.slug); });
         wrap.appendChild(btn);
