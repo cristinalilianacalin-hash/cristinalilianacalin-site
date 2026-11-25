@@ -781,3 +781,41 @@ body.xmas:not(.xmas-young) .xm .xm-quiz .btn.solid { background: var(--ivory); b
 body.xmas:not(.xmas-young) .xm .xm-quiz .btn.solid:hover { background: #fff; }
 body.xmas:not(.xmas-young) .xm .xm-quiz .xm-rec { border-color: rgba(217,183,101,.55); }
 body.xmas:not(.xmas-young) .xm .xm-quiz .xm-preview-note { color: #ddd5c0; border-color: rgba(217,183,101,.7); }
+
+/* ===================== v13: young readers page on one continuous night, pixel snow ===================== */
+body.xmas-young { background: #120b33; color: #e8fffa; }
+body.xmas-young::before { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 100vh; z-index: -1; pointer-events: none;
+  background: radial-gradient(90% 70% at 78% 12%, rgba(59,31,120,.95), transparent 70%), radial-gradient(70% 60% at 8% 95%, rgba(42,24,104,.8), transparent 70%); }
+body.xmas-young::after { content: ""; position: fixed; left: 0; right: 0; top: -100vh; height: 200vh; z-index: -1; pointer-events: none; will-change: transform;
+  background-image: linear-gradient(#e8fffa,#e8fffa), linear-gradient(#ffb8ec,#ffb8ec), linear-gradient(#5ef0d4,#5ef0d4), linear-gradient(#e8fffa,#e8fffa), linear-gradient(#e8fffa,#e8fffa), linear-gradient(#5ef0d4,#5ef0d4);
+  background-size: 4px 4px; background-repeat: no-repeat;
+  background-position: 8% 6%, 34% 21%, 62% 9%, 88% 33%, 50% 42%, 18% 47%;
+  opacity: .7; animation: ys-pagesnow 22s steps(60) infinite; }
+body.xmas-young .xm-y::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(#e8fffa,#e8fffa), linear-gradient(#5ef0d4,#5ef0d4), linear-gradient(#ffb8ec,#ffb8ec), linear-gradient(#e8fffa,#e8fffa), linear-gradient(#e8fffa,#e8fffa), linear-gradient(#5ef0d4,#5ef0d4), linear-gradient(#e8fffa,#e8fffa), linear-gradient(#ffb8ec,#ffb8ec);
+  background-size: 3px 3px; background-repeat: no-repeat;
+  background-position: 22% 14%, 72% 18%, 44% 30%, 92% 52%, 6% 66%, 58% 74%, 30% 88%, 80% 92%; opacity: .45; animation: ys-twinkle 4s steps(2) infinite; }
+@keyframes ys-pagesnow { from { transform: translateY(0); } to { transform: translateY(100vh); } }
+@keyframes ys-twinkle { 50% { opacity: .2; } }
+@media (prefers-reduced-motion: reduce) { body.xmas-young::after, body.xmas-young .xm-y::before { animation: none !important; } }
+
+/* sections transparent, no per-section snow */
+body.xmas-young .xm-y .xm-hero, body.xmas-young .xm-y .yw, body.xmas-young .xm-y .yb, body.xmas-young .xm-y .yu, body.xmas-young .xm-y .yl,
+body.xmas-young .xm-y .yq, body.xmas-young .xm-y .yo, body.xmas-young .xm-y .yi, body.xmas-young .doors, body.xmas-young .site-foot { background: transparent; }
+body.xmas-young .xm-y .yw::before { display: none; }
+body.xmas-young .xm-y > section > .xm-snow, body.xmas-young .xm-y .yi-snow { display: none; }
+body.xmas-young .xm-y .yb, body.xmas-young .xm-y .yu, body.xmas-young .xm-y .yl, body.xmas-young .xm-y .yq, body.xmas-young .xm-y .yo, body.xmas-young .xm-y .yi, body.xmas-young .doors { border-top: 1px solid rgba(94,240,212,.14); }
+body.xmas-young .xm-y .yo .xm-countdown { background: rgba(11,16,48,.6); }
+
+/* light text everywhere */
+body.xmas-young .xm-y .xm-more { color: #c9c3f2; }
+body.xmas-young .xm-y .xm-more a { color: #5ef0d4 !important; }
+body.xmas-young .doors, body.xmas-young .doors-h, body.xmas-young .door-label strong { color: #fff; }
+body.xmas-young .doors-sub, body.xmas-young .door-desc, body.xmas-young .door-name { color: #c9c3f2; opacity: 1; }
+body.xmas-young .door-state { border-color: rgba(94,240,212,.7); color: #5ef0d4; }
+body.xmas-young .is-here .door-state { background: #5ef0d4; color: #0f0a2c; border-color: #5ef0d4; }
+body.xmas-young .door a:focus-visible { outline-color: #5ef0d4; }
+body.xmas-young .site-foot { color: #e8fffa; border-top-color: rgba(94,240,212,.25); }
+body.xmas-young .site-foot a { color: #5ef0d4; }
+body.xmas-young .site-foot .mono, body.xmas-young .site-foot small { color: #c9c3f2; }
+body.xmas-young :focus-visible { outline-color: #5ef0d4; }
