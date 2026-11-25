@@ -226,6 +226,9 @@
 .xmas .xm-y .xm-letter { background: var(--ivory); }
 .xmas .xm-quiz-wrap .xm-quiz { margin-top: 1rem; border: 1px solid #d8ccb0; }
 
+.xmas .xm .btn.xm-cta-long { white-space: normal; text-align: center; line-height: 1.35; max-width: 22rem; padding-top: .7rem; padding-bottom: .7rem; }
+.xmas .xm-hero .btns { align-items: stretch; }
+
 /* ---------- Narrow screens ---------- */
 @media (max-width: 860px) {
   .xmas .xm-hero-grid, .xmas .xm-letter-grid, .xmas .xm-quiz-grid, .xmas .xm-order-grid, .xmas .xm-feature-grid { grid-template-columns: minmax(0, 1fr); gap: 2.2rem; }
