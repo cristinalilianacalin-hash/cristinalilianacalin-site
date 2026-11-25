@@ -8,6 +8,7 @@ Idempotent. Adds, to every .html page of the site:
   - the honest footer line about anonymous visit counts;
   - JSON-LD fixes (sameAs, book formats, release dates, Christmas page).
 Usage:  python3 tools/postbuild_stats_seo.py <site-root>   (site detected from CNAME)
+On cristinalilianacalin.com, also run tools/og_cards.py <site-root> (one share image per page).
 """
 import json, os, re, sys
 
