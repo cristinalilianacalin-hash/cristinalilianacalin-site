@@ -63,7 +63,11 @@ def fix_ld(site, node, path):
         if info and 'bookFormat' in node:
             node['bookFormat'] = FORMATS
             node.setdefault('datePublished', info['datePublished'])
-    for v in list(node.values()):
+    for k, v in list(node.items()):
+        # workExample holds specific editions (e.g. Romanian / bilingual on Lulu) with their own
+        # format, language and price: leave them exactly as written.
+        if k == 'workExample':
+            continue
         if isinstance(v, (dict, list)):
             fix_ld(site, v, path)
 
