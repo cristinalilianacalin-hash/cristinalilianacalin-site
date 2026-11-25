@@ -19,15 +19,59 @@
     });
   });
 
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- young readers: notifications glitch in when they scroll into view ---------- */
+  var reveal = document.querySelectorAll('[data-reveal]');
+  if (reveal.length) {
+    document.documentElement.classList.add('xm-js');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(reveal, function (el) { el.classList.add('is-in'); });
+    } else {
+      var rio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); rio.unobserve(e.target); } });
+      }, { threshold: 0.2 });
+      Array.prototype.forEach.call(reveal, function (el, i) { el.style.animationDelay = (i * 0.12) + 's'; rio.observe(el); });
+    }
+  }
+
+  /* ---------- young readers: the encrypted message decrypts into the sample letter ---------- */
+  var GL = '01<>/[]{}#%=+*';
+  Array.prototype.forEach.call(document.querySelectorAll('.yl-crypt'), function (btn) {
+    var letter = document.getElementById(btn.getAttribute('aria-controls'));
+    var label = btn.querySelector('.yl-label');
+    var lines = letter.querySelectorAll('[data-scr]');
+    Array.prototype.forEach.call(lines, function (l) { l.setAttribute('data-text', l.textContent); });
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      letter.hidden = !open;
+      label.textContent = open ? 'Encrypt it again' : 'Decrypt the sample letter';
+      if (!open || reduceMotion) return;
+      Array.prototype.forEach.call(lines, function (l) {
+        var target = l.getAttribute('data-text'), start = null;
+        l.setAttribute('aria-hidden', 'true');
+        function frame(t) {
+          if (!start) start = t;
+          var p = Math.min(1, (t - start) / 900), fixed = Math.floor(p * target.length), out = '';
+          for (var i = 0; i < target.length; i++) out += (i < fixed || target[i] === ' ') ? target[i] : GL[(Math.random() * GL.length) | 0];
+          l.textContent = out;
+          if (p < 1) requestAnimationFrame(frame); else { l.textContent = target; l.removeAttribute('aria-hidden'); }
+        }
+        requestAnimationFrame(frame);
+      });
+    });
+  });
+
   /* ---------- countdown to Christmas Eve (the visitor's own time zone) ---------- */
+  /* ---------- countdown to the last order moment for US Christmas delivery (catalog christmas.order_deadline) ---------- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-countdown]'), function (box) {
-    var p = box.getAttribute('data-countdown').split('-');
-    var target = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0);
+    var target = new Date(box.getAttribute('data-countdown'));
     var d = box.querySelector('[data-d]'), h = box.querySelector('[data-h]'), m = box.querySelector('[data-m]');
     function tick() {
       var ms = target - new Date();
-      if (ms <= 0) {
-        box.innerHTML = '<p class="mono">Christmas Eve</p><p class="xm-order-by">It is here. Santa suggests a blanket and chapter one.</p>';
+      if (isNaN(ms) || ms <= 0) {
+        box.innerHTML = '<p class="mono">The last order day for the US has passed</p><p class="xm-order-by">Santa&#8217;s sleigh has left for the US. The letter still arrives in 48 hours, and the gift that arrives twice still works.</p>';
         return;
       }
       var mins = Math.floor(ms / 60000);
