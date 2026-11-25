@@ -1,0 +1,242 @@
+/* christmas.css | "A Book for Christmas Eve" (christmas/ and christmas/young-readers/). Edited by hand.
+   VOICE: warm, dry, elegant. The Christmas window of a beautiful old bookshop, never plastic lights.
+   IDEA: a shop window at dusk; the books are wrapped gifts under a pen-and-ink tree, like the cover motifs.
+   COLOUR: pine (site green), ivory paper, discreet gold, burgundy from Book Three's cover.
+   TYPE: the site's Newsreader + DM Mono. Every selector is scoped to body.xmas so style.css stays untouched. */
+.xmas {
+  --pine: #173f35; --pine-2: #0f2c25; --ivory: #f7f1e3; --ivory-2: #efe5cf;
+  --gold: #d9b765; --gold-ink: #7a5a14; --burg: #8c1c2b; --burg-2: #6d1421; --ink-line: #1d2621;
+  background: var(--ivory);
+}
+.xmas .site-head { background: var(--ivory); border-bottom-color: #d8ccb0; }
+.xmas .xm a:not(.btn) { color: var(--burg); }
+.xmas .xm .btn { border-color: var(--burg); color: var(--burg); min-height: 2.75rem; display: inline-flex; align-items: center; }
+.xmas .xm .btn:hover { background: #f1dfdc; }
+.xmas .xm .btn.solid { background: var(--burg); color: #fbf5ea; }
+.xmas .xm .btn.solid:hover { background: var(--burg-2); }
+.xmas .xm .sub { color: var(--gold-ink); }
+.xmas .xm h2 { max-width: 24ch; text-wrap: balance; }
+.xmas .xm-h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+.xmas .xm-h4 { font-size: 1.25rem; margin: 0 0 .35rem; }
+.xmas .xm-intro { max-width: 60ch; color: #3f4a44; }
+.xmas .xm-fine { font-family: var(--mono); font-size: .78rem; color: #4f5b55; margin: .8rem 0 0; max-width: 62ch; }
+
+/* Santa's lines: a small pen-and-ink hat, never a branded Santa */
+.xmas .xm-santa { display: flex; gap: .7rem; align-items: flex-start; font-style: italic; margin: .6rem 0 1rem; }
+.xmas .xm-hat { flex: none; width: 2.1rem; height: 1.7rem; margin-top: .1rem; }
+.xmas .xm-hat .hat-body { fill: var(--burg); stroke: var(--ink-line); stroke-width: 1.4; stroke-linejoin: round; }
+.xmas .xm-hat .hat-fur, .xmas .xm-hat .hat-pom { fill: var(--ivory); stroke: var(--ink-line); stroke-width: 1.4; }
+.xmas .xm-santa-big { font-size: 1.25rem; }
+
+/* ---------- Hero: the shop window ---------- */
+.xmas .xm-hero { position: relative; overflow: hidden; background: radial-gradient(120% 90% at 75% 10%, #21503f 0, var(--pine) 50%, var(--pine-2) 100%); color: var(--ivory); padding: 3.5rem 0 4rem; }
+.xmas .xm-hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 3rem; align-items: center; }
+.xmas .xm-kicker { color: var(--gold); margin: 0 0 1rem; }
+.xmas .xm-kicker a { color: var(--gold) !important; }
+.xmas .xm-hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); letter-spacing: -.015em; line-height: 1.06; text-wrap: balance; }
+.xmas .xm-domain { font-style: italic; color: var(--gold); overflow-wrap: anywhere; }
+.xmas .xm-lede { font-size: 1.3rem; max-width: 36ch; margin: 1.3rem 0 2rem; color: #e9e2cf; }
+.xmas .xm-hero .xm-santa { color: #e9e2cf; max-width: 40ch; }
+.xmas .xm-hero .btn { border-color: var(--ivory); color: var(--ivory); }
+.xmas .xm-hero .btn:hover { background: rgba(247,241,227,.1); }
+.xmas .xm-hero .btn.solid { background: var(--ivory); color: var(--burg); border-color: var(--ivory); }
+.xmas .xm-hero .btn.solid:hover { background: #fff; }
+.xmas .xm-small { color: var(--gold); margin: 1.2rem 0 0; display: flex; align-items: center; gap: .5rem; }
+.xmas .xm-star { width: .8rem; height: .8rem; background: var(--gold); clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+
+.xmas .xm-window { position: relative; justify-self: center; width: min(26rem, 100%); aspect-ratio: 13 / 16; border: 1.5px solid rgba(217,183,101,.75); border-radius: 13rem 13rem 6px 6px; background: linear-gradient(#123329, #0c241e); box-shadow: inset 0 0 0 8px #0e2a22, inset 0 0 0 9.5px rgba(217,183,101,.35), 0 30px 60px -30px rgba(0,0,0,.7); overflow: hidden; }
+.xmas .xm-glow { position: absolute; inset: 0; background: radial-gradient(40% 32% at 18% 86%, rgba(255,196,110,.42), transparent 70%), radial-gradient(55% 40% at 50% 92%, rgba(255,210,140,.16), transparent 75%); animation: xm-flicker 5s ease-in-out infinite; }
+@keyframes xm-flicker { 0%, 100% { opacity: 1; } 45% { opacity: .82; } 60% { opacity: .95; } }
+.xmas .xm-tree { position: absolute; left: 6%; top: 6%; width: 88%; height: 76%; overflow: visible; }
+.xmas .xm-tree .tier, .xmas .xm-tree .trunk { fill: var(--ivory-2); stroke: var(--ink-line); stroke-width: 1.6; stroke-linejoin: round; }
+.xmas .xm-tree .trunk { fill: #b79b72; }
+.xmas .xm-tree .garland { fill: none; stroke: var(--burg); stroke-width: 1.3; stroke-dasharray: 1 4.5; stroke-linecap: round; }
+.xmas .xm-tree .hatch { fill: none; stroke: var(--ink-line); stroke-width: 1; opacity: .55; stroke-linecap: round; }
+.xmas .xm-tree .star { fill: var(--gold); stroke: var(--ink-line); stroke-width: 1.2; }
+.xmas .xm-tree .baubles circle { fill: var(--burg); stroke: var(--ink-line); stroke-width: 1.2; }
+.xmas .xm-tree .baubles circle.g { fill: var(--gold); }
+.xmas .xm-tree .sleigh path { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.xmas .xm-tree .wax { fill: var(--ivory); stroke: var(--ink-line); stroke-width: 1.2; }
+.xmas .xm-tree .wick { stroke: var(--ink-line); stroke-width: 1.2; }
+.xmas .xm-tree .flame { fill: #ffcf7a; transform-origin: 29px 234px; animation: xm-flame 2.4s ease-in-out infinite; }
+@keyframes xm-flame { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(.92, 1.06) rotate(-3deg); } }
+.xmas .xm-tree-gifts { position: absolute; left: 22%; right: 22%; bottom: 9%; display: flex; justify-content: center; align-items: flex-end; gap: 4%; }
+.xmas .xm-tree-gift { position: relative; width: 26%; filter: drop-shadow(0 8px 10px rgba(0,0,0,.45)); }
+.xmas .xm-tree-gift.g1 { transform: rotate(-6deg); }
+.xmas .xm-tree-gift.g2 { width: 30%; }
+.xmas .xm-tree-gift.g3 { transform: rotate(5deg); }
+.xmas .xm-window-sign { position: absolute; left: 0; right: 0; bottom: 2.5%; margin: 0; text-align: center; font-family: var(--mono); font-size: .7rem; color: var(--gold); letter-spacing: .04em; }
+
+/* Snow: three soft layers, CSS only; style.css already stops all motion under prefers-reduced-motion */
+.xmas .xm-snow { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.xmas .xm-snow i { position: absolute; inset: -100% 0 0; background-image: radial-gradient(2px 2px at 10% 20%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 30% 60%, #fff 50%, transparent 51%), radial-gradient(2.5px 2.5px at 55% 35%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 75% 80%, #fff 50%, transparent 51%), radial-gradient(2px 2px at 90% 10%, #fff 50%, transparent 51%), radial-gradient(1.5px 1.5px at 45% 90%, #fff 50%, transparent 51%); background-size: 220px 220px; opacity: .55; animation: xm-snow 26s linear infinite; }
+.xmas .xm-snow i:nth-child(2) { background-size: 320px 320px; opacity: .35; animation-duration: 38s; left: -40px; }
+.xmas .xm-snow i:nth-child(3) { background-size: 150px 150px; opacity: .25; animation-duration: 18s; }
+@keyframes xm-snow { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(30px, 50%, 0); } }
+@media (prefers-reduced-motion: reduce) { .xmas .xm-snow i, .xmas .xm-glow, .xmas .xm-tree .flame, .xmas .xm-elf { animation: none !important; } }
+
+/* ---------- Gifts: covers tied with ribbon ---------- */
+.xmas .xm-gift, .xmas .xm-tree-gift { position: relative; display: block; }
+.xmas .xm-cover { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 2px 4px 4px 2px; box-shadow: 10px 14px 26px -16px rgba(15,44,37,.7); }
+.xmas .xm-cover-ph { display: flex; flex-direction: column; padding: 12% 10%; background: linear-gradient(90deg, rgba(0,0,0,.3), transparent 9%), var(--c); color: var(--ivory); }
+.xmas .ph-series { font-family: var(--mono); font-size: .62rem; color: #d9d2bf; }
+.xmas .ph-title { margin-top: auto; font-size: 1.35rem; line-height: 1.08; }
+.xmas .ph-author { margin-bottom: 22%; font-size: .72rem; letter-spacing: .05em; color: var(--gold); margin-top: .6rem; border-top: 1px solid rgba(247,241,227,.3); padding-top: .4rem; }
+.xmas .xm-ribbon { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, transparent 86%, rgba(217,183,101,.95) 86%, rgba(217,183,101,.95) 92%, transparent 92%), linear-gradient(transparent 82%, rgba(217,183,101,.95) 82%, rgba(217,183,101,.95) 87%, transparent 87%); border-radius: 2px 4px 4px 2px; }
+.xmas .xm-bow { position: absolute; left: 87%; top: 84.5%; width: 34%; aspect-ratio: 2 / 1; transform: translate(-50%, -50%); pointer-events: none; }
+.xmas .xm-bow::before, .xmas .xm-bow::after { content: ""; position: absolute; top: 0; width: 50%; height: 100%; border: 2px solid #8a6a1e; background: var(--gold); border-radius: 50% 10% 50% 10%; }
+.xmas .xm-bow::before { left: 0; transform: rotate(-12deg); }
+.xmas .xm-bow::after { right: 0; transform: scaleX(-1) rotate(-12deg); }
+
+/* ---------- Books ---------- */
+.xmas .xm-books { background: var(--ivory); }
+.xmas .xm-cards { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 2.5rem 2rem; }
+.xmas .xm-card { display: grid; gap: 1.1rem; align-content: start; }
+.xmas .xm-card .xm-gift { width: min(12rem, 70%); }
+.xmas .xm-series { color: var(--gold-ink); margin: 0 0 .3rem; }
+.xmas .xm-card-title { font-size: 1.5rem; }
+.xmas .xm-card-title a { text-decoration: none; color: var(--ink) !important; }
+.xmas .xm-card-title a:hover { text-decoration: underline; }
+.xmas .xm-card .xm-santa { font-size: 1.02rem; }
+.xmas .xm-avail { display: flex; align-items: center; gap: .45rem; color: #3f4a44; margin: .2rem 0 0; }
+.xmas .xm-buy { margin-top: .4rem; }
+.xmas .xm-young-link { margin: 2.2rem 0 0; font-style: italic; }
+.xmas .xm-twice { margin-top: 3.5rem; padding: 2rem clamp(1.2rem, 3vw, 2.4rem); border: 1px solid #d8ccb0; border-radius: 6px; background: linear-gradient(#fbf7ee, var(--ivory)); }
+.xmas .xm-cards-small { margin-top: 1.6rem; }
+.xmas .xm-cards-small .xm-gift { width: min(9rem, 55%); }
+
+/* ---------- Letter + envelope ---------- */
+.xmas .xm-letter { background: var(--ivory-2); }
+.xmas .xm-letter-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+.xmas .xm-letter p { max-width: 56ch; }
+.xmas .xm-envelope { position: relative; display: block; width: min(24rem, 100%); aspect-ratio: 3 / 2; margin: 3.5rem auto 3.5rem; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; perspective: 900px; }
+.xmas .xm-envelope:focus-visible { outline: 3px solid var(--ink); outline-offset: 6px; }
+.xmas .env-back, .xmas .env-front, .xmas .env-flap { position: absolute; inset: 0; border-radius: 4px; }
+.xmas .env-back { z-index: 0; background: #dcc9a2; box-shadow: 0 22px 34px -20px rgba(29,38,33,.65); }
+.xmas .env-paper { position: absolute; z-index: 1; left: 6%; right: 6%; top: 6%; bottom: 6%; background: #fffdf7 repeating-linear-gradient(transparent 0 14px, rgba(29,38,33,.08) 14px 15px); border-radius: 2px; transition: transform .7s cubic-bezier(.2,.8,.2,1) .2s; }
+.xmas .env-front { z-index: 2; background: linear-gradient(160deg, #f4e9d0, #eadbb9); clip-path: polygon(0 0, 50% 56%, 100% 0, 100% 100%, 0 100%); }
+.xmas .env-flap { z-index: 3; background: linear-gradient(#ecdfc2, #e2d1ab); clip-path: polygon(0 0, 100% 0, 50% 60%); transform-origin: 50% 0; transition: transform .6s ease, z-index 0s .3s; }
+.xmas .env-seal { position: absolute; z-index: 4; left: 50%; top: 56%; width: 3.6rem; height: 3.6rem; transform: translate(-50%, -50%); border-radius: 46% 54% 50% 50%; background: radial-gradient(circle at 35% 30%, #b13246, var(--burg) 55%, var(--burg-2)); color: #f3d6c9; display: grid; place-items: center; font-size: 1.7rem; font-style: italic; box-shadow: 0 0 0 3px rgba(140,28,43,.3), 0 4px 8px rgba(0,0,0,.3); transition: opacity .3s ease, transform .4s ease; }
+.xmas .env-label { position: absolute; left: 0; right: 0; bottom: -2.6rem; font-family: var(--mono); font-size: .86rem; color: var(--burg); text-decoration: underline; text-underline-offset: .2em; }
+.xmas .xm-envelope[aria-expanded="true"] .env-flap { transform: rotateX(180deg); z-index: 0; }
+.xmas .xm-envelope[aria-expanded="true"] .env-seal { opacity: 0; transform: translate(-50%, -50%) scale(.6); }
+.xmas .xm-envelope[aria-expanded="true"] .env-paper { transform: translateY(-42%); }
+.xmas .xm-letter-side { text-align: center; }
+.xmas .xm-letter-side .xm-sample { text-align: left; margin-top: 1rem; }
+.xmas .xm-sample { background: #fffdf7; padding: clamp(1.4rem, 4vw, 2.6rem); border-radius: 3px; box-shadow: 0 1px 0 #e7dcc3, 0 24px 50px -30px rgba(29,38,33,.55); position: relative; animation: xm-rise .6s ease both; }
+.xmas .xm-sample::before { content: ""; position: absolute; inset: .6rem; border: 1px solid #eadfc6; pointer-events: none; }
+@keyframes xm-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.xmas .xm-sample p { font-size: 1.08rem; }
+.xmas .xm-sample-tag { display: inline-block; margin: 0 0 1rem; padding: .2rem .6rem; border: 1px solid var(--burg); color: var(--burg); border-radius: 999px; }
+.xmas .xm-sign { font-style: italic; font-size: 1.25rem !important; margin-bottom: .2rem; }
+.xmas .xm-sign-ph { display: inline-block; border: 1.5px dashed #a39572; padding: .7rem .9rem; color: #5a5139; max-width: 30ch; }
+
+/* ---------- How it works ---------- */
+.xmas .xm-how { background: var(--ivory); }
+.xmas .xm-steps { list-style: none; padding: 0; margin: 2.2rem 0 1.6rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; counter-reset: none; }
+.xmas .xm-steps li { position: relative; padding-top: 3.4rem; }
+.xmas .xm-step-n { position: absolute; top: 0; left: 0; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1.5px solid var(--gold-ink); color: var(--gold-ink); display: grid; place-items: center; font-size: 1.2rem; font-style: italic; }
+.xmas .xm-steps p { margin: 0; color: #3f4a44; }
+.xmas .xm-steps-compact { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+.xmas .xm-steps-compact li { padding: 0 0 0 3.6rem; }
+.xmas .xm-trust { list-style: none; padding: 0; margin: 0 0 1.8rem; display: grid; gap: .45rem; color: #3f4a44; }
+.xmas .xm-trust li::before { content: ""; display: inline-block; width: .5rem; height: .5rem; margin-right: .6rem; background: var(--gold); transform: rotate(45deg); vertical-align: .1em; }
+
+/* ---------- Quiz ---------- */
+.xmas .xm-quiz-sec { background: var(--pine); color: var(--ivory); }
+.xmas .xm-quiz-sec .sub { color: var(--gold); }
+.xmas .xm-quiz-sec .xm-fine { color: #d3ccb8; }
+.xmas .xm-quiz-sec .xm-fine a { color: var(--gold) !important; }
+.xmas .xm-quiz-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 3rem; align-items: start; }
+.xmas .xm-quiz { background: #fffdf7; color: var(--ink); border-radius: 6px; padding: clamp(1.2rem, 3.5vw, 2.2rem); box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); min-height: 24rem; }
+.xmas .xm-progress { height: 6px; background: #ece3cf; border-radius: 3px; overflow: hidden; }
+.xmas .xm-progress span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--burg), #b0475a); transition: width .35s ease; }
+.xmas .xm-count { color: #4f5b55; margin: .6rem 0 1.2rem; }
+.xmas .xm-q { font-size: clamp(1.4rem, 2.6vw, 1.8rem); line-height: 1.2; margin: 0 0 .5rem; outline: none; text-wrap: balance; }
+.xmas .xm-help { margin: 0 0 1.2rem; color: #4f5b55; font-size: 1rem; }
+.xmas .xm-opts { display: grid; gap: .6rem; margin: 1.2rem 0 0; }
+.xmas .xm-opt { font: inherit; font-size: 1.05rem; text-align: left; color: var(--ink); background: #fbf6ea; border: 1.5px solid #d7c9a8; border-radius: 10px; padding: .8rem 1rem; min-height: 3rem; cursor: pointer; transition: border-color .15s ease, background .15s ease, transform .15s ease; }
+.xmas .xm-opt:hover { border-color: var(--burg); background: #fff; transform: translateY(-1px); }
+.xmas .xm-opt[aria-pressed="true"] { border-color: var(--burg); background: #f6e4e2; box-shadow: inset 0 0 0 1px var(--burg); }
+.xmas .xm-opt:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.xmas .xm-book-opts { grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.5rem), 1fr)); }
+.xmas .xm-book-opt { display: grid; gap: .5rem; align-content: start; padding: .7rem; font-size: .92rem; line-height: 1.25; }
+.xmas .xm-book-opt .xm-cover { box-shadow: 4px 6px 12px -8px rgba(0,0,0,.6); }
+.xmas .xm-book-opt .ph-title { font-size: .95rem; }
+.xmas .xm-book-opt small { font-family: var(--mono); font-size: .7rem; color: #4f5b55; }
+.xmas .xm-book-help { grid-column: 1 / -1; text-align: center; font-style: italic; }
+.xmas .xm-field { display: grid; gap: .35rem; margin: 1rem 0 0; }
+.xmas .xm-field label { font-size: 1rem; }
+.xmas .xm-field input[type="text"], .xmas .xm-field input[type="email"], .xmas .xm-field textarea { font: inherit; font-size: 1rem; padding: .75rem .85rem; border: 1.5px solid #bfb08c; border-radius: 8px; background: #fff; color: var(--ink); width: 100%; }
+.xmas .xm-field textarea { min-height: 5.5rem; resize: vertical; }
+.xmas .xm-field input:focus, .xmas .xm-field textarea:focus { outline: 3px solid var(--ink); outline-offset: 1px; }
+.xmas .xm-check { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: .6rem; align-items: start; margin: 1rem 0 0; font-size: .98rem; line-height: 1.45; }
+.xmas .xm-check input { width: 1.3rem; height: 1.3rem; margin: .12rem 0 0; accent-color: var(--burg); }
+.xmas .xm-err { color: #8c1c2b; font-family: var(--mono); font-size: .8rem; margin: .3rem 0 0; }
+.xmas .xm-nav { display: flex; gap: .8rem; justify-content: space-between; align-items: center; margin-top: 1.6rem; flex-wrap: wrap; }
+.xmas .xm-back { font: inherit; font-family: var(--mono); font-size: .84rem; background: none; border: 0; color: var(--burg); text-decoration: underline; text-underline-offset: .2em; cursor: pointer; min-height: 2.75rem; padding: 0 .2rem; }
+.xmas .xm-done { text-align: center; padding: 1rem 0; }
+.xmas .xm-done .xm-q { margin-top: 1rem; }
+.xmas .xm-done-seal { width: 4rem; height: 4rem; margin: 0 auto; border-radius: 46% 54% 50% 50%; background: radial-gradient(circle at 35% 30%, #b13246, var(--burg) 55%, var(--burg-2)); color: #f3d6c9; display: grid; place-items: center; font-size: 1.8rem; font-style: italic; }
+.xmas .xm-rec { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1rem; align-items: center; text-align: left; margin: 1.4rem auto 0; max-width: 26rem; padding: 1rem; border: 1px solid #d7c9a8; border-radius: 8px; }
+.xmas .xm-preview-note { font-family: var(--mono); font-size: .76rem; color: #5a5139; border: 1.5px dashed #a39572; padding: .5rem .7rem; display: inline-block; margin-top: 1rem; }
+
+/* ---------- Order-by + countdown ---------- */
+.xmas .xm-order { position: relative; overflow: hidden; background: var(--burg); color: #fbf1ea; }
+.xmas .xm-order .xm-snow i { opacity: .3; }
+.xmas .xm-order-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 2.5rem; align-items: center; }
+.xmas .xm-order-by { font-size: 1.35rem; margin: 1rem 0 0; }
+.xmas .xm-order .xm-fine { color: #f3dcd6; }
+.xmas .xm-countdown { border: 1px solid rgba(243,214,201,.5); border-radius: 6px; padding: 1.4rem; text-align: center; }
+.xmas .xm-countdown .mono { margin: 0 0 .6rem; color: #f3d6c9; }
+.xmas .xm-cd { display: flex; justify-content: center; gap: 1.4rem; margin: 0; flex-wrap: wrap; font-family: var(--mono); font-size: .8rem; }
+.xmas .xm-cd span { display: grid; justify-items: center; }
+.xmas .xm-cd b { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1; font-variant-numeric: tabular-nums; }
+
+/* ---------- Iceland + more ---------- */
+.xmas .xm-iceland { background: var(--ivory); padding-bottom: 2.5rem; }
+.xmas .xm-narrow p { max-width: 60ch; }
+.xmas .xm-iceland p { font-size: 1.15rem; }
+.xmas .xm-more { font-family: var(--mono); font-size: .8rem; color: #4f5b55; padding-top: 0; padding-bottom: 3rem; margin: 0 auto; }
+.xmas .doors { margin-top: 0; }
+
+/* ---------- Young readers page ---------- */
+.xmas .xm-y .xm-hero { background: radial-gradient(120% 90% at 75% 10%, #2a3a6a 0, #1d2a52 45%, var(--pine-2) 100%); }
+.xmas .xm-window-y { display: grid; place-items: end center; }
+.xmas .xm-y-book { position: absolute; left: 50%; bottom: 12%; width: 42%; transform: translateX(-56%) rotate(-4deg); filter: drop-shadow(0 12px 16px rgba(0,0,0,.5)); }
+.xmas .xm-elf { position: absolute; right: 6%; bottom: 10%; width: 32%; overflow: visible; animation: xm-glitch 6s steps(1) infinite; }
+.xmas .xm-elf .elf-hat { fill: #2f7a5c; stroke: var(--ink-line); stroke-width: 1.6; stroke-linejoin: round; }
+.xmas .xm-elf .elf-pom, .xmas .xm-elf .elf-fur { fill: var(--ivory); stroke: var(--ink-line); stroke-width: 1.4; }
+.xmas .xm-elf .elf-head, .xmas .xm-elf .elf-body { fill: var(--ivory-2); stroke: var(--ink-line); stroke-width: 1.6; }
+.xmas .xm-elf .elf-screen { fill: #1d2a52; stroke: var(--ink-line); stroke-width: 1.2; }
+.xmas .xm-elf .elf-eyes rect { fill: #8fe8d4; }
+.xmas .xm-elf .elf-mouth, .xmas .xm-elf .elf-arms, .xmas .xm-elf .elf-legs, .xmas .xm-elf .elf-belt { fill: none; stroke: var(--ink-line); stroke-width: 1.6; stroke-linecap: round; }
+.xmas .xm-elf .elf-belt { stroke: var(--burg); stroke-width: 3; }
+@keyframes xm-glitch { 0%, 92%, 100% { transform: none; filter: none; } 93% { transform: translate(2px, -1px) skewX(-4deg); filter: hue-rotate(60deg); } 95% { transform: translate(-2px, 1px); } 97% { transform: translate(1px, 0) skewX(3deg); } }
+.xmas .xm-why { background: var(--ivory); }
+.xmas .xm-why-list { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.5rem; }
+.xmas .xm-why-list li { border-top: 1px solid #d8ccb0; padding-top: 1rem; }
+.xmas .xm-why-list p { margin: 0; color: #3f4a44; }
+.xmas .xm-feature { background: var(--ivory-2); }
+.xmas .xm-feature-grid { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 3rem; align-items: start; }
+.xmas .xm-gift-lg { width: min(17rem, 100%); justify-self: center; }
+.xmas .xm-feature h2 a { color: var(--ink) !important; text-decoration: none; }
+.xmas .xm-feature h2 a:hover { text-decoration: underline; }
+.xmas .xm-feature p { max-width: 58ch; }
+.xmas .xm-y .xm-letter { background: var(--ivory); }
+.xmas .xm-quiz-wrap .xm-quiz { margin-top: 1rem; border: 1px solid #d8ccb0; }
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 860px) {
+  .xmas .xm-hero-grid, .xmas .xm-letter-grid, .xmas .xm-quiz-grid, .xmas .xm-order-grid, .xmas .xm-feature-grid { grid-template-columns: minmax(0, 1fr); gap: 2.2rem; }
+  .xmas .xm-window { width: min(22rem, 100%); }
+  .xmas .xm-steps { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
+  .xmas .xm-steps li { padding: 0 0 0 3.6rem; }
+  .xmas .xm-why-list { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .xmas .xm-hero { padding: 2.4rem 0 3rem; }
+  .xmas .xm-lede, .xmas .xm-santa-big { font-size: 1.12rem; }
+  .xmas .xm-hero .btns .btn { flex: 1 1 100%; justify-content: center; }
+  .xmas .xm-envelope { margin-bottom: 1.5rem; }
+}
