@@ -752,3 +752,32 @@ body.xmas:not(.xmas-young) .site-foot .mono, body.xmas:not(.xmas-young) .site-fo
 body.xmas:not(.xmas-young) :focus-visible { outline-color: var(--gold); }
 body.xmas:not(.xmas-young) .xm .xm-more { color: #e6dfcb; }
 body.xmas:not(.xmas-young) .xm-still .cnd-glow { fill: rgba(255,207,122,.12); }
+
+/* v12b: quiz card and sleigh section on the pine as well */
+body.xmas:not(.xmas-young) .xm .xm-order { background: transparent; border-top: 1px solid rgba(217,183,101,.18); color: var(--ivory); }
+body.xmas:not(.xmas-young) .xm .xm-order .xm-snow { display: none; }
+body.xmas:not(.xmas-young) .xm .xm-order .xm-fine { color: #ddd5c0; }
+body.xmas:not(.xmas-young) .xm .xm-countdown { border-color: rgba(217,183,101,.6); background: rgba(12,36,30,.45); }
+body.xmas:not(.xmas-young) .xm .xm-countdown .mono { color: var(--gold); }
+body.xmas:not(.xmas-young) .xm .xm-sleigh .santa, body.xmas:not(.xmas-young) .xm .xm-sleigh .hat { fill: #8c1c2b !important; }
+
+body.xmas:not(.xmas-young) .xm .xm-quiz { background: rgba(12,36,30,.55); color: var(--ivory); box-shadow: 0 0 0 1px rgba(217,183,101,.75), 0 30px 60px -30px rgba(0,0,0,.6); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-progress { background: rgba(247,241,227,.15); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-progress span { background: linear-gradient(90deg, #c9a24f, var(--gold)); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-count, body.xmas:not(.xmas-young) .xm .xm-quiz .xm-help, body.xmas:not(.xmas-young) .xm .xm-quiz .xm-book-opt small, body.xmas:not(.xmas-young) .xm .xm-quiz .xm-fine { color: #ddd5c0; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-q { color: #fff; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-opt { background: rgba(247,241,227,.06); color: var(--ivory); border-color: rgba(217,183,101,.55); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-opt:hover { background: rgba(247,241,227,.12); border-color: var(--gold); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-opt[aria-pressed="true"] { background: rgba(217,183,101,.2); border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-opt:focus-visible { outline-color: var(--gold); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-field label, body.xmas:not(.xmas-young) .xm .xm-quiz .xm-check label { color: var(--ivory); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-field input, body.xmas:not(.xmas-young) .xm .xm-quiz .xm-field textarea { background: #0f2c25; color: var(--ivory); border-color: rgba(217,183,101,.7); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-field input:focus, body.xmas:not(.xmas-young) .xm .xm-quiz .xm-field textarea:focus { outline: 3px solid var(--gold); outline-offset: 1px; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-check input { accent-color: var(--gold); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-err { color: #ffc9b8; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-back, body.xmas:not(.xmas-young) .xm .xm-quiz a:not(.btn) { color: var(--gold) !important; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .btn { border-color: var(--gold); color: var(--ivory); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .btn.solid { background: var(--ivory); border-color: var(--ivory); color: #6d1421; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .btn.solid:hover { background: #fff; }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-rec { border-color: rgba(217,183,101,.55); }
+body.xmas:not(.xmas-young) .xm .xm-quiz .xm-preview-note { color: #ddd5c0; border-color: rgba(217,183,101,.7); }
