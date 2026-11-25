@@ -87,8 +87,13 @@
   function bookBy(slug) { for (var i = 0; i < DATA.books.length; i++) if (DATA.books[i].slug === slug) return DATA.books[i]; return null; }
   function coverNode(b) {
     if (b.cover) { var img = el('img', 'xm-cover'); img.src = coverBase + b.cover; img.alt = ''; img.width = 600; img.height = 900; img.loading = 'lazy'; return img; }
-    var ph = el('span', 'xm-cover xm-cover-ph'); ph.style.setProperty('--c', b.accent);
+    var ph = el('span', 'xm-cover xm-cover-ph ink-' + (b.ink || 'light')); ph.style.setProperty('--c', b.accent);
     ph.appendChild(el('span', 'ph-title', b.title)); ph.appendChild(el('span', 'ph-author', 'Cristina Liliana Calin')); return ph;
+  }
+
+  function wrapNode(teen) {
+    var t = document.getElementById(teen ? 'xm-wrap-teen' : 'xm-wrap-adult');
+    return t ? t.content.firstElementChild.cloneNode(true) : document.createTextNode('');
   }
 
   // "Help me" branch: a gentle pick among the books that are out before Christmas
@@ -137,8 +142,10 @@
       DATA.books.forEach(function (b) {
         var btn = el('button', 'xm-opt xm-book-opt'); btn.type = 'button';
         btn.setAttribute('aria-pressed', answers.book === b.slug ? 'true' : 'false');
-        btn.appendChild(coverNode(b));
+        var g = el('span', 'xm-gift'); g.appendChild(coverNode(b)); g.appendChild(wrapNode(b.teen)); btn.appendChild(g);
+        if (b.teen) btn.className += ' is-teen';
         btn.appendChild(el('span', null, b.title));
+        btn.appendChild(el('span', 'tg-q', b.teen ? 'GIFT_MODE: ON \u00b7 Christmas 2026' : 'Christmas Gift Edition 2026, with a personal letter'));
         btn.appendChild(el('small', null, b.twice ? 'Letter now, book in January' : b.avail));
         btn.addEventListener('click', function () { choose('book', b.slug); });
         wrap.appendChild(btn);
