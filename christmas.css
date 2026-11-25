@@ -426,3 +426,77 @@
 .xm-homeband .xm-hb-link:nth-child(even) .xm-hb-gift { transform: rotate(2deg); }
 .xm-homeband .xm-hb-cap { grid-column: 1 / -1; margin: .4rem 0 0; text-align: center; font-family: var(--mono); font-size: .8rem; color: #e8c873; }
 .xm-homeband .xm-hb-cap a { color: #f3e2b0 !important; }
+
+/* ===== v8 ===== */
+/* Books and "arrives twice": one centred composition, equal columns, text centred on shared baselines */
+.xmas .xm-books .xm-cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 17rem)); justify-content: center; align-items: stretch; gap: 2.5rem 2.2rem; }
+.xmas .xm-books .xm-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; height: 100%; }
+.xmas .xm-books .xm-card .xm-gift.is-xmas { width: min(12rem, 72%); margin: 0 auto; }
+.xmas .xm-books .xm-card-text { display: flex; flex-direction: column; align-items: center; flex: 1; width: 100%; }
+.xmas .xm-books .xm-series { min-height: 1.3em; }
+.xmas .xm-books .xm-cards:not(.xm-cards-small) .xm-card-title { min-height: 2.4em; display: flex; align-items: flex-start; justify-content: center; }
+.xmas .xm-books .xm-card .xm-santa { justify-content: center; text-align: left; max-width: 16rem; margin-left: auto; margin-right: auto; }
+.xmas .xm-books .xm-avail, .xmas .xm-books .xm-buy { margin-top: auto; justify-content: center; }
+.xmas .xm-books .xm-card .xm-fine { text-align: center; margin-top: .5rem; }
+.xmas .xm-books .xm-twice { text-align: center; }
+.xmas .xm-books .xm-twice .xm-cards-small { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 16rem)); }
+.xmas .xm-books .xm-twice .xm-card .xm-gift.is-xmas { width: min(10rem, 66%); }
+
+/* Letter section on pine, envelope in ivory paper with a gold edge and burgundy seal */
+.xmas .xm:not(.xm-y) .xm-letter { background: radial-gradient(80% 90% at 75% 40%, #21503f, var(--pine) 55%, var(--pine-2)); color: var(--ivory); }
+.xmas .xm:not(.xm-y) .xm-letter .sub { color: var(--gold); }
+.xmas .xm:not(.xm-y) .xm-letter h2 { color: #fff; }
+.xmas .xm:not(.xm-y) .xm-letter p { color: #ebe4cf; }
+.xmas .xm:not(.xm-y) .xm-letter .xm-santa { color: #f3ead2; }
+.xmas .xm:not(.xm-y) .xm-letter .xm-sample p { color: var(--ink); }
+.xmas .xm:not(.xm-y) .xm-letter .xm-sample .xm-sample-tag { color: var(--burg); }
+.xmas .env-back { background: #efe2c3; box-shadow: 0 0 0 1.5px #d9b765, 0 30px 50px -22px rgba(0,0,0,.75), 0 0 60px -10px rgba(255,214,140,.35); }
+.xmas .env-front { background: linear-gradient(160deg, #fffaf0, #f3e7cc 60%, #eadbb9); }
+.xmas .env-front::after { content: ""; }
+.xmas .env-flap { background: linear-gradient(#fbf3e1, #efe0bd); filter: drop-shadow(0 3px 2px rgba(120,90,30,.25)); }
+.xmas .env-seal { box-shadow: 0 0 0 3px rgba(217,183,101,.85), 0 0 0 4.5px rgba(109,20,33,.5), 0 6px 10px rgba(0,0,0,.45); }
+.xmas .env-label { color: var(--gold); }
+.xmas .xm-envelope:focus-visible { outline-color: var(--gold); }
+.xmas .xm:not(.xm-y) .xm-letter a:not(.btn) { color: var(--gold) !important; }
+
+/* Quiz: one centred column */
+.xmas .xm-quiz-single { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1.6rem; }
+.xmas .xm-quiz-single .xm-quiz-side { text-align: center; max-width: 40rem; }
+.xmas .xm-quiz-single .xm-quiz-side .xm-santa { justify-content: center; }
+.xmas .xm-quiz-single .xm-quiz-side .xm-fine { margin-left: auto; margin-right: auto; }
+.xmas .xm-quiz-single .xm-quiz { width: 100%; max-width: 45rem; }
+
+/* Sleigh flight across the order-by section */
+.xmas .xm-order { overflow: hidden; }
+.xmas .xm-flight { position: absolute; inset: 0; pointer-events: none; }
+.xmas .xm-sleigh { position: absolute; top: 6%; left: 0; width: clamp(200px, 26vw, 340px); overflow: visible; animation: xm-fly 16s linear infinite; }
+.xmas .xm-sleigh .sk path, .xmas .xm-sleigh .sk circle { fill: none; stroke: #f6ecdc; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.xmas .xm-sleigh .body { fill: rgba(246,236,220,.12) !important; }
+.xmas .xm-sleigh .santa, .xmas .xm-sleigh .hat { fill: #6d1421 !important; }
+.xmas .xm-sleigh .pom, .xmas .xm-sleigh .face { fill: #f6ecdc !important; }
+.xmas .xm-sleigh .sack { fill: rgba(217,183,101,.35) !important; stroke: #e8c873 !important; }
+.xmas .xm-sleigh .rein { stroke: #e8c873 !important; stroke-width: 1 !important; }
+.xmas .xm-sleigh .spark path { fill: #e8c873; animation: xm-twinkle 1.6s ease-in-out infinite; }
+.xmas .xm-sleigh .spark path:nth-child(2) { animation-delay: .5s; } .xmas .xm-sleigh .spark path:nth-child(3) { animation-delay: 1s; }
+@keyframes xm-twinkle { 50% { opacity: .2; } }
+@keyframes xm-fly {
+  0% { transform: translate(105vw, 60px) rotate(4deg); opacity: 0; }
+  6% { opacity: 1; }
+  50% { transform: translate(40vw, 0) rotate(0); }
+  94% { opacity: 1; }
+  100% { transform: translate(-40vw, 50px) rotate(-4deg); opacity: 0; }
+}
+.xmas .xm-order-grid { padding-top: clamp(3rem, 6vw, 5rem); }
+@media (prefers-reduced-motion: reduce) {
+  .xmas .xm-sleigh { animation: none !important; left: auto; right: 4%; top: 4%; transform: none; }
+  .xmas .xm-sleigh .spark path { animation: none !important; }
+}
+@media (max-width: 600px) { .xmas .xm-sleigh { width: 210px; top: 2%; } .xmas .xm-order-grid { padding-top: 5.5rem; } }
+/* v8: availability lines share one baseline; release notes sit in a reserved strip below them */
+.xmas .xm-books .xm-cards:not(.xm-cards-small) .xm-card-text { position: relative; padding-bottom: 3.9rem; }
+.xmas .xm-books .xm-cards:not(.xm-cards-small) .xm-card .xm-fine { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; }
+.xmas .xm-books .xm-avail { white-space: nowrap; }
+.xmas .xm-books .xm-twice .xm-cards-small { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 17rem)); }
+.xmas .xm-books .xm-card-title { display: flex; justify-content: center; }
+.xmas .xm-quiz-single .xm-book-opts { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 760px) { .xmas .xm-quiz-single .xm-book-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
