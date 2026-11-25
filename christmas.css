@@ -667,3 +667,6 @@ html.xm-js .xmas .xm-y .yw-note[data-reveal]:not(.is-in) { opacity: 0; }
 }
 .xmas .xm-y .yq .xm-book-opts { grid-template-columns: repeat(auto-fit, minmax(7.5rem, 11rem)); justify-content: center; }
 .xmas .xm-countdown .mono { max-width: 22rem; margin-left: auto; margin-right: auto; }
+.xmas .xm-y .yb-stand { padding-top: 8rem; }
+.xmas .xm-y .yb-stand .xm-gift { justify-self: center; margin: 0 auto; }
+.xmas .xm-y .yb-stand .xm-tag { top: -7.6rem; left: 50%; margin-left: -4.3rem; }
