@@ -349,3 +349,44 @@
 /* v5: adult books show their Christmas cover, no ribbon or tag, so they can be a little larger */
 .xmas .xm-card .xm-gift.is-xmas { width: min(12rem, 68%); }
 .xmas .xm-cards-small .xm-gift.is-xmas { width: min(10rem, 58%); }
+
+/* v6: one composition per section: centred heads, centred card rows, balanced two-column blocks */
+.xmas .xm-head { text-align: center; max-width: 46rem; margin: 0 auto; }
+.xmas .xm-head h2 { margin-left: auto; margin-right: auto; max-width: 30ch; }
+.xmas .xm-head .xm-intro, .xmas .xm-head .xm-how-note { margin-left: auto; margin-right: auto; }
+.xmas .xm-center { text-align: center; }
+.xmas .xm-center-block { text-align: center; margin-left: auto; margin-right: auto; }
+.xmas .xm-cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 15.5rem)); justify-content: center; gap: 2.5rem 1.8rem; }
+.xmas .xm-how .xm-tags { max-width: 72rem; }
+.xmas .xm-inline-link { color: var(--burg); font-family: var(--mono); font-size: .84rem; white-space: nowrap; }
+.xmas .xm-iceland { padding: 4.5rem 0; background: var(--ivory); }
+.xmas .xm-iceland-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: center; max-width: 60rem; }
+.xmas .xm-iceland-card { padding: 2rem clamp(1.2rem, 3vw, 2.4rem); border: 1px solid #dcc9a0; border-radius: 10px; background: #fffdf7; box-shadow: 0 22px 40px -30px rgba(29,38,33,.5); position: relative; }
+.xmas .xm-iceland-card::after { content: ""; position: absolute; inset: .45rem; border: 1px dashed #e3d4b0; border-radius: 6px; pointer-events: none; }
+.xmas .xm-iceland-card p { font-size: 1.1rem; }
+.xmas .xm-still { width: 100%; max-width: 26rem; justify-self: center; overflow: visible; }
+.xmas .xm-still .ink { fill: none; stroke: #1d2621; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.xmas .xm-still .ink.paper { fill: #f4ead3; }
+.xmas .xm-still .ink.mug { fill: #8c1c2b; }
+.xmas .xm-still .ink.thin { stroke-width: .9; opacity: .7; }
+.xmas .xm-still .ink.ribbon { fill: #8c1c2b; stroke-width: 1.2; }
+.xmas .xm-still .flame { fill: #ffcf7a; stroke: #b47b1d; stroke-width: .8; transform-origin: 262px 114px; animation: xm-flame 2.4s ease-in-out infinite; }
+.xmas .xm-still .cnd-glow { fill: rgba(255,207,122,.22); stroke: none; }
+.xmas .xm-still .sf path { fill: none; stroke: #c9a24f; stroke-width: 1.4; stroke-linecap: round; }
+.xmas .xm-more { padding-top: 1rem; }
+.xmas .xm-twice .xm-cards-small { justify-content: center; }
+@media (max-width: 860px) { .xmas .xm-iceland-grid { grid-template-columns: minmax(0, 1fr); } .xmas .xm-still { max-width: 18rem; } }
+@media (prefers-reduced-motion: reduce) { .xmas .xm-still .flame { animation: none !important; } }
+
+/* Home page seasonal band (only while christmas.enabled) */
+.xm-homeband .xm-hero-home { padding: clamp(2rem, 4vw, 3.2rem) 0; }
+.xm-homeband .xm-home-h { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.06; letter-spacing: -.015em; text-wrap: balance; margin: 0; color: var(--ivory); max-width: 16ch; }
+.xm-homeband .xm-santa-big { font-size: 1.12rem; margin-top: 1rem; }
+.xm-homeband .xm-letter-line { margin: .2rem 0 1.3rem; }
+.xm-homeband .xm-hb-shelf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; align-items: end; padding: 1.4rem 1.2rem 1.2rem; border: 1.5px solid rgba(217,183,101,.6); border-radius: 12px; background: rgba(12,36,30,.55); text-decoration: none; box-shadow: inset 0 0 40px rgba(255,196,110,.12); }
+.xm-homeband .xm-hb-shelf:hover { border-color: #d9b765; }
+.xm-homeband .xm-hb-gift { position: relative; }
+.xm-homeband .xm-hb-gift:nth-child(odd) { transform: rotate(-2deg); }
+.xm-homeband .xm-hb-gift:nth-child(even) { transform: rotate(2deg); }
+.xm-homeband .xm-hb-gift .xm-cover { box-shadow: 0 10px 18px -8px rgba(0,0,0,.6); }
+@media (max-width: 860px) { .xm-homeband .xm-hb-shelf { max-width: 26rem; } }
