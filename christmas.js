@@ -5,6 +5,7 @@
    While that endpoint is empty (preview), nothing is sent anywhere. No cookies, no storage. */
 (function () {
   'use strict';
+  function track(name, data) { if (typeof window.clcTrack === 'function') window.clcTrack(name, data); }
 
   /* ---------- envelope: opens to the sample letter ---------- */
   Array.prototype.forEach.call(document.querySelectorAll('.xm-envelope'), function (btn) {
@@ -14,6 +15,7 @@
       var open = btn.getAttribute('aria-expanded') !== 'true';
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       letter.hidden = !open;
+      if (open) track('envelope-open', { page: location.pathname });
       label.textContent = open ? 'Close the sample letter' : 'Open the sample letter';
       if (open && window.innerWidth < 860) letter.scrollIntoView({ block: 'start' });
     });
@@ -170,7 +172,9 @@
     return row;
   }
 
-  function choose(id, v) { answers[id] = v; touched = true; setTimeout(function () { step++; render(); }, 180); }
+  var started = false;
+  function markStart() { if (!started) { started = true; track('quiz-start', { quiz: KIND }); } }
+  function choose(id, v) { markStart(); answers[id] = v; touched = true; setTimeout(function () { step++; render(); }, 180); }
 
   function render() {
     var s = STEPS[step];
@@ -223,7 +227,7 @@
       var go = function () {
         var v = inp.value.trim();
         if (s.required && !v) { err.textContent = 'Santa needs this one. A few words are enough.'; err.hidden = false; inp.setAttribute('aria-invalid', 'true'); inp.focus(); return; }
-        answers[s.id] = v; touched = true; step++; render();
+        markStart(); answers[s.id] = v; touched = true; step++; render();
       };
       if (s.type === 'text') inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); go(); } });
       stage.appendChild(nav(true, go));
@@ -300,6 +304,8 @@
   }
 
   function done(rec, preview) {
+    track('quiz-finish', { quiz: KIND, sent: preview ? 'preview' : 'yes' });
+    started = false;
     stage.innerHTML = '';
     bar.style.width = '100%';
     count.textContent = 'Done';
