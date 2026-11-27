@@ -831,3 +831,17 @@ body.xmas-young :focus-visible { outline-color: #5ef0d4; }
 
 .xm-cover-link { display: block; cursor: pointer; }
 .xm-cover-link:hover .xm-cover { filter: brightness(1.05); }
+
+/* young readers: two editions with first-chapter links (27.11) */
+.xmas .xm-y .yb-col { display: grid; justify-items: center; gap: .4rem; }
+.xmas .xm-y .yb-cover-link { display: block; }
+.xmas .xm-y .yb-stand-ro { padding-top: 9rem; }
+.xmas .xm-y .yb-read { margin-bottom: 1.2rem; }
+.xmas .xm-y .yb-stand-ro .xm-gift { animation-delay: -2.5s; }
+.xmas .xm-y .yb-read { display: grid; grid-template-columns: auto 1fr; column-gap: .7rem; align-items: center; width: min(19rem, 92%); padding: .75rem 1rem; border-radius: 12px; text-decoration: none; color: #eef1ff !important; background: rgba(13,20,64,.8); box-shadow: 0 0 0 1.5px rgba(94,240,212,.6) inset, 0 0 22px -8px rgba(94,240,212,.7); font-family: "DM Mono", ui-monospace, monospace; transition: transform .2s, box-shadow .2s; }
+.xmas .xm-y .yb-read:hover { transform: translateY(-2px); box-shadow: 0 0 0 1.5px #5ef0d4 inset, 0 0 30px -6px rgba(94,240,212,.9); }
+.xmas .xm-y .yb-read-k { grid-row: span 2; color: #5ef0d4; font-size: 1.1rem; animation: yb-blink 1.1s steps(1) infinite; }
+.xmas .xm-y .yb-read-l { font-size: .95rem; }
+.xmas .xm-y .yb-read-m { font-size: .68rem; letter-spacing: .06em; color: #aeb7e0; }
+@keyframes yb-blink { 50% { opacity: .2; } }
+@media (prefers-reduced-motion: reduce) { .xmas .xm-y .yb-read-k { animation: none; } }
