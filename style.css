@@ -998,3 +998,8 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .btn.btn-direct:focus-visible { outline: 3px solid var(--gold-line); outline-offset: 3px; }
 .direct-note { border-left: 2px solid var(--gold-line); padding-left: .75rem; color: var(--gold-ink) !important; }
 .dark .direct-note, .zone .direct-note { color: var(--gold-light) !important; border-left-color: var(--gold-light); }
+
+.link-direct { color: var(--gold-ink) !important; text-decoration-color: rgba(184,146,63,.55); text-underline-offset: .18em; }
+.link-direct::before { content: "\270E"; display: inline-block; margin-right: .3em; transform: rotate(-8deg); color: var(--gold-line); text-decoration: none; }
+.dark .link-direct, .zone .link-direct { color: var(--gold-light) !important; }
+.dark .link-direct::before, .zone .link-direct::before { color: var(--gold-light); }
