@@ -886,3 +886,5 @@ body.xmas-young :focus-visible { outline-color: #5ef0d4; }
 .xmas .xm.xm-y .yb-text .yb-eds .yb-eds-grid a.yb-opt.is-direct, .xmas .xm.xm-y .yb-text .yb-eds .yb-eds-grid a.yb-opt.is-direct:visited { color: #e6cd8a !important; background: rgba(230,205,138,.08); box-shadow: 0 0 0 1.5px #e6cd8a inset, 0 8px 22px -14px rgba(230,205,138,.7); }
 .xmas .xm.xm-y .yb-text .yb-eds .yb-eds-grid a.yb-opt.is-direct small { color: #d8c08a; }
 .xmas .xm.xm-y .yb-text .yb-eds .yb-eds-grid a.yb-opt.is-direct:hover { background: rgba(230,205,138,.16); }
+/* 27.11: the letter line in the same gold as the domain in "Santa has landed on" */
+.xm-homeband .xm-letter-line, .xmas .xm:not(.xm-y) .xm-hero .xm-letter-line { color: var(--gold); }
