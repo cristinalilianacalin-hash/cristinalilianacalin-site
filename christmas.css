@@ -828,3 +828,6 @@ body.xmas-young :focus-visible { outline-color: #5ef0d4; }
 .xmas .xm .yb-ro .btn:hover, .xmas .xm .yb-ro .btn:focus-visible { background: #e8fffa; color: #0b1030; border-color: #e8fffa; }
 .xmas .xm .yb-ro .btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; max-width: 34rem; }
 @media (max-width: 600px) { .xmas .xm .yb-ro .btns { grid-template-columns: minmax(0, 1fr); } }
+
+.xm-cover-link { display: block; cursor: pointer; }
+.xm-cover-link:hover .xm-cover { filter: brightness(1.05); }

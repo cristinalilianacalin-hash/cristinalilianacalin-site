@@ -983,3 +983,6 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .hero-eds li a:hover { background: rgba(127,127,127,.12); }
 .hero-eds b { font-family: var(--mono); font-weight: 500; font-size: .86rem; }
 .hero-eds span { font-family: var(--mono); font-size: .7rem; opacity: .75; }
+
+/* Pip and on-screen text: tech voice (as in the printed book) */
+.text .tech { font-family: var(--mono); font-size: .84em; letter-spacing: -.01em; font-variant-caps: normal; color: var(--accent-deep, #29245e); background: color-mix(in srgb, var(--tint, #e3e2fa) 55%, transparent); padding: .05em .25em; border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
