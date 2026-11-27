@@ -986,3 +986,10 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 
 /* Pip and on-screen text: tech voice (as in the printed book) */
 .text .tech { font-family: var(--mono); font-size: .84em; letter-spacing: -.01em; font-variant-caps: normal; color: var(--accent-deep, #29245e); background: color-mix(in srgb, var(--tint, #e3e2fa) 55%, transparent); padding: .05em .25em; border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* direct from the author: stands out, warm gold, same shape as other buttons */
+.btn.btn-direct { background: linear-gradient(135deg, #f0d48a 0%, #d9a54a 55%, #c08a35 100%); color: #2b1d06 !important; border: 1px solid #b07a28; box-shadow: 0 8px 20px -10px rgba(176,122,40,.9), inset 0 1px 0 rgba(255,255,255,.45); }
+.btn.btn-direct::before { content: "\270E"; display: inline-block; margin-right: .5em; transform: rotate(-8deg); }
+.btn.btn-direct:hover { background: linear-gradient(135deg, #f6de9c 0%, #e2b057 55%, #c8923a 100%); transform: translateY(-1px); box-shadow: 0 12px 24px -10px rgba(176,122,40,1), inset 0 1px 0 rgba(255,255,255,.5); }
+.btn.btn-direct:focus-visible { outline: 3px solid #b07a28; outline-offset: 3px; }
+.direct-note { border-left: 2px solid #d9a54a; padding-left: .7rem; }
