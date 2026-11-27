@@ -987,9 +987,14 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 /* Pip and on-screen text: tech voice (as in the printed book) */
 .text .tech { font-family: var(--mono); font-size: .84em; letter-spacing: -.01em; font-variant-caps: normal; color: var(--accent-deep, #29245e); background: color-mix(in srgb, var(--tint, #e3e2fa) 55%, transparent); padding: .05em .25em; border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
-/* direct from the author: stands out, warm gold, same shape as other buttons */
-.btn.btn-direct { background: linear-gradient(135deg, #f0d48a 0%, #d9a54a 55%, #c08a35 100%); color: #2b1d06 !important; border: 1px solid #b07a28; box-shadow: 0 8px 20px -10px rgba(176,122,40,.9), inset 0 1px 0 rgba(255,255,255,.45); }
-.btn.btn-direct::before { content: "\270E"; display: inline-block; margin-right: .5em; transform: rotate(-8deg); }
-.btn.btn-direct:hover { background: linear-gradient(135deg, #f6de9c 0%, #e2b057 55%, #c8923a 100%); transform: translateY(-1px); box-shadow: 0 12px 24px -10px rgba(176,122,40,1), inset 0 1px 0 rgba(255,255,255,.5); }
-.btn.btn-direct:focus-visible { outline: 3px solid #b07a28; outline-offset: 3px; }
-.direct-note { border-left: 2px solid #d9a54a; padding-left: .7rem; }
+/* direct from the author: elegant champagne gold, pairs with the periwinkle buttons */
+:root { --gold-soft: #f4e9cc; --gold-line: #b8923f; --gold-ink: #6e5214; --gold-glow: rgba(184,146,63,.35); --gold-light: #e6cd8a; }
+.btn.btn-direct { background: linear-gradient(180deg, #f8f0da 0%, var(--gold-soft) 100%); color: var(--gold-ink) !important; border: 1.5px solid var(--gold-line); box-shadow: 0 6px 18px -12px var(--gold-glow); }
+.btn.btn-direct::before { content: "\270E"; display: inline-block; margin-right: .5em; transform: rotate(-8deg); color: var(--gold-line); }
+.btn.btn-direct:hover { background: #fbf4e2; border-color: #a17a2c; transform: translateY(-1px); box-shadow: 0 10px 22px -12px rgba(184,146,63,.6); }
+.dark .btn.btn-direct, .zone .btn.btn-direct { background: rgba(230,205,138,.08); color: var(--gold-light) !important; border-color: var(--gold-light); box-shadow: 0 0 0 0 transparent, 0 8px 22px -14px rgba(230,205,138,.7); }
+.dark .btn.btn-direct::before, .zone .btn.btn-direct::before { color: var(--gold-light); }
+.dark .btn.btn-direct:hover, .zone .btn.btn-direct:hover { background: rgba(230,205,138,.16); }
+.btn.btn-direct:focus-visible { outline: 3px solid var(--gold-line); outline-offset: 3px; }
+.direct-note { border-left: 2px solid var(--gold-line); padding-left: .75rem; color: var(--gold-ink) !important; }
+.dark .direct-note, .zone .direct-note { color: var(--gold-light) !important; border-left-color: var(--gold-light); }
