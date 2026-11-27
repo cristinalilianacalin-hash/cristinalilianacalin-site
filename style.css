@@ -975,3 +975,11 @@ a.plain:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .z-eds-lang i { color: var(--z-mute); font-style: italic; font-family: inherit; }
 .z-eds-more { font-family: var(--mono); font-size: .74rem; text-align: center; margin: .7rem 0 0; color: var(--z-mute); }
 @media (max-width: 960px) { .z-hero-side { display: contents; } .z-eds-pick { margin-top: .5rem; } }
+
+.hero-eds { margin: 1.4rem 0 .4rem; max-width: 34rem; }
+.hero-eds-h { font-size: .78rem; letter-spacing: .04em; margin: 0 0 .55rem; opacity: .85; }
+.hero-eds ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.hero-eds li a { display: inline-flex; flex-direction: column; gap: .15rem; padding: .55rem .85rem; border: 1px solid currentColor; border-radius: 10px; text-decoration: none; color: inherit; line-height: 1.2; }
+.hero-eds li a:hover { background: rgba(127,127,127,.12); }
+.hero-eds b { font-family: var(--mono); font-weight: 500; font-size: .86rem; }
+.hero-eds span { font-family: var(--mono); font-size: .7rem; opacity: .75; }
