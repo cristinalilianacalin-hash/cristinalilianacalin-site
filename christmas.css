@@ -888,3 +888,4 @@ body.xmas-young :focus-visible { outline-color: #5ef0d4; }
 .xmas .xm.xm-y .yb-text .yb-eds .yb-eds-grid a.yb-opt.is-direct:hover { background: rgba(230,205,138,.16); }
 /* 27.11: the letter line in the same gold as the domain in "Santa has landed on" */
 .xm-homeband .xm-letter-line, .xmas .xm:not(.xm-y) .xm-hero .xm-letter-line { color: var(--gold); }
+.xmas .xm.xm-y .xm-letter-line, .xmas .xm-y .yh-text .xm-letter-line { color: var(--gold) !important; border-left-color: var(--gold) !important; }
