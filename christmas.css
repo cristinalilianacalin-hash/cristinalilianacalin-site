@@ -889,3 +889,11 @@ body.xmas-young :focus-visible { outline-color: #5ef0d4; }
 /* 27.11: the letter line in the same gold as the domain in "Santa has landed on" */
 .xm-homeband .xm-letter-line, .xmas .xm:not(.xm-y) .xm-hero .xm-letter-line { color: var(--gold); }
 .xmas .xm.xm-y .xm-letter-line, .xmas .xm-y .yh-text .xm-letter-line { color: var(--gold) !important; border-left-color: var(--gold) !important; }
+
+/* 27.11: direct-from-the-author line under each book, same mono as the availability line */
+.xmas .xm-books .xm-avail.xm-direct { display: block; margin-top: .45rem; white-space: normal; text-align: center; line-height: 1.6; max-width: 100%; }
+body.xmas .xm .xm-books .xm-avail.xm-direct, body.xmas .xm .xm-books .xm-avail.xm-direct a { color: var(--gold) !important; }
+.xmas .xm-books .xm-avail.xm-direct { font-size: .76rem; }
+.xmas .xm-books .xm-avail.xm-direct a { color: var(--gold-ink) !important; text-decoration-color: rgba(122,90,20,.45); text-underline-offset: .18em; }
+.xmas .xm-books .xm-avail.xm-direct a:hover { text-decoration-color: currentColor; }
+.xmas .xm-books .xm-pen { display: inline-block; transform: rotate(-8deg); color: var(--gold); margin-right: .15rem; }
